@@ -10,7 +10,16 @@ class SpeficPage extends StatelessWidget {
       body: Center(
           child: ListView(
         padding: const EdgeInsets.all(20),
-        children: [Text("엄", style: AppTextStyle.headline3)],
+        children: [
+          IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: const Icon(
+                Icons.arrow_back_ios,
+                color: Colors.white,
+              ))
+        ],
       )),
     );
   }
