@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:homelab_dashboard/desginSystem/font.dart';
 import 'package:homelab_dashboard/view/spefic_page.dart';
@@ -7,6 +8,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(kIsWasm);
     return Scaffold(
         body: ListView(
       padding: const EdgeInsets.all(20),
