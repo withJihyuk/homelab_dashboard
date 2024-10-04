@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       children: [
         Text(
-          "Infrasturcture",
+          "Infra | JihyukLab",
           style: AppTextStyle.headline3,
         ),
         const SizedBox(height: 30),
