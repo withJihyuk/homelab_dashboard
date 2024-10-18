@@ -27,9 +27,30 @@ class _HomePageState extends State<HomePage> {
       padding: const EdgeInsets.all(20),
       children: [
         Text(
-          "Infra",
+          "HOME",
           style: AppTextStyle.headline3,
         ),
+        const SizedBox(height: 20),
+        Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Colors.white.withOpacity(0.7),
+                    Colors.blue.withOpacity(0.7),
+                    Colors.purple.withOpacity(0.7),
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(10)),
+            padding: const EdgeInsets.all(20),
+            height: 500,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Future<JihyukLab>", style: AppTextStyle.highlight),
+              ],
+            )),
         const SizedBox(height: 30),
         FutureBuilder<List<ServerModel>>(
           future: serverList,
@@ -91,9 +112,6 @@ class ServerCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Icon(Icons.circle,
-                        color: isOnline ? Colors.green : Colors.red, size: 16),
-                    const SizedBox(width: 10),
                     Text(name, style: AppTextStyle.headline3),
                   ],
                 ),
