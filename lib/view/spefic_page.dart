@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:homelab_dashboard/desginSystem/font.dart';
+import 'package:homelab_dashboard/entity/json.dart';
 
 class SpeficPage extends StatelessWidget {
-  const SpeficPage({super.key});
+  final ServerModel server;
+  const SpeficPage({super.key, required this.server});
 
   @override
   Widget build(BuildContext context) {
@@ -10,12 +12,12 @@ class SpeficPage extends StatelessWidget {
       body: Center(
           child: ListView(
         padding: const EdgeInsets.all(20),
-        children: const [
+        children: [
           TopBar(
-            name: "서버명",
+            name: server.name,
           ),
-          SizedBox(height: 70),
-          ServerInfoCard()
+          const SizedBox(height: 70),
+          const ServerInfoCard()
         ],
       )),
     );

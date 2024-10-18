@@ -43,6 +43,7 @@ class _HomePageState extends State<HomePage> {
                     name: server.name,
                     description: server.spec,
                     isOnline: server.status == "온라인",
+                    server: server,
                   );
                 }).toList(),
               );
@@ -60,11 +61,13 @@ class ServerCard extends StatelessWidget {
   final String name;
   final String description;
   final bool isOnline;
+  final ServerModel server;
   const ServerCard({
     super.key,
     required this.name,
     required this.description,
     required this.isOnline,
+    required this.server,
   });
 
   @override
@@ -73,7 +76,7 @@ class ServerCard extends StatelessWidget {
         onTap: () {
           Navigator.push(context, MaterialPageRoute(
             builder: (context) {
-              return const SpeficPage();
+              return SpeficPage(server: server);
             },
           ));
         },
