@@ -10,6 +10,7 @@ _$ServerModelImpl _$$ServerModelImplFromJson(Map<String, dynamic> json) =>
     _$ServerModelImpl(
       name: json['name'] as String,
       ip: json['ip'] as String,
+      os: json['os'] as String,
       description: json['description'] as String,
       status: json['status'] as String,
       spec: json['spec'] as String,
@@ -24,6 +25,7 @@ Map<String, dynamic> _$$ServerModelImplToJson(_$ServerModelImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'ip': instance.ip,
+      'os': instance.os,
       'description': instance.description,
       'status': instance.status,
       'spec': instance.spec,

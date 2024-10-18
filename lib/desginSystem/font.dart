@@ -24,6 +24,10 @@ class AppTextStyle {
         fontWeight: FontWeight.w800,
       );
 
+  static TextStyle pretendardThinStyle(double size, double? height) =>
+      pretendardStyle(size, height)
+          .copyWith(fontWeight: FontWeight.w300, color: Colors.grey);
+
   static final TextStyle highlight = pretendardBoldStyle(32, 36);
   static final TextStyle headline1 = pretendardBoldStyle(24, 33);
   static final TextStyle headline2 = pretendardBoldStyle(20, 27);
@@ -31,9 +35,10 @@ class AppTextStyle {
   static final TextStyle title1 = pretendardBoldStyle(16, 22);
   static final TextStyle title2 = pretendardSemiBoldStyle(16, 22);
   static final TextStyle title3 = pretendardBoldStyle(14, 20);
-  static final TextStyle body1 = pretendardSemiBoldStyle(14, 20);
+  static final TextStyle body1 = pretendardMediumStyle(14, 24);
   static final TextStyle body2 = pretendardMediumStyle(14, 20);
   static final TextStyle body3 = pretendardMediumStyle(13, 18);
   static final TextStyle alert1 = pretendardSemiBoldStyle(12, 17);
   static final TextStyle alert2 = pretendardStyle(12, 17);
+  static final TextStyle caption1 = pretendardThinStyle(12, 17);
 }

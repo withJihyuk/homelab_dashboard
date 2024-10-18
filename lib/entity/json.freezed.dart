@@ -22,6 +22,7 @@ ServerModel _$ServerModelFromJson(Map<String, dynamic> json) {
 mixin _$ServerModel {
   String get name => throw _privateConstructorUsedError;
   String get ip => throw _privateConstructorUsedError;
+  String get os => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
   String get spec => throw _privateConstructorUsedError;
@@ -48,6 +49,7 @@ abstract class $ServerModelCopyWith<$Res> {
   $Res call(
       {String name,
       String ip,
+      String os,
       String description,
       String status,
       String spec,
@@ -73,6 +75,7 @@ class _$ServerModelCopyWithImpl<$Res, $Val extends ServerModel>
   $Res call({
     Object? name = null,
     Object? ip = null,
+    Object? os = null,
     Object? description = null,
     Object? status = null,
     Object? spec = null,
@@ -88,6 +91,10 @@ class _$ServerModelCopyWithImpl<$Res, $Val extends ServerModel>
       ip: null == ip
           ? _value.ip
           : ip // ignore: cast_nullable_to_non_nullable
+              as String,
+      os: null == os
+          ? _value.os
+          : os // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
           ? _value.description
@@ -128,6 +135,7 @@ abstract class _$$ServerModelImplCopyWith<$Res>
   $Res call(
       {String name,
       String ip,
+      String os,
       String description,
       String status,
       String spec,
@@ -151,6 +159,7 @@ class __$$ServerModelImplCopyWithImpl<$Res>
   $Res call({
     Object? name = null,
     Object? ip = null,
+    Object? os = null,
     Object? description = null,
     Object? status = null,
     Object? spec = null,
@@ -166,6 +175,10 @@ class __$$ServerModelImplCopyWithImpl<$Res>
       ip: null == ip
           ? _value.ip
           : ip // ignore: cast_nullable_to_non_nullable
+              as String,
+      os: null == os
+          ? _value.os
+          : os // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
           ? _value.description
@@ -201,6 +214,7 @@ class _$ServerModelImpl implements _ServerModel {
   const _$ServerModelImpl(
       {required this.name,
       required this.ip,
+      required this.os,
       required this.description,
       required this.status,
       required this.spec,
@@ -216,6 +230,8 @@ class _$ServerModelImpl implements _ServerModel {
   final String name;
   @override
   final String ip;
+  @override
+  final String os;
   @override
   final String description;
   @override
@@ -236,7 +252,7 @@ class _$ServerModelImpl implements _ServerModel {
 
   @override
   String toString() {
-    return 'ServerModel(name: $name, ip: $ip, description: $description, status: $status, spec: $spec, created: $created, grafana: $grafana, service: $service)';
+    return 'ServerModel(name: $name, ip: $ip, os: $os, description: $description, status: $status, spec: $spec, created: $created, grafana: $grafana, service: $service)';
   }
 
   @override
@@ -246,6 +262,7 @@ class _$ServerModelImpl implements _ServerModel {
             other is _$ServerModelImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.ip, ip) || other.ip == ip) &&
+            (identical(other.os, os) || other.os == os) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.status, status) || other.status == status) &&
@@ -257,8 +274,17 @@ class _$ServerModelImpl implements _ServerModel {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, name, ip, description, status,
-      spec, created, grafana, const DeepCollectionEquality().hash(_service));
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      ip,
+      os,
+      description,
+      status,
+      spec,
+      created,
+      grafana,
+      const DeepCollectionEquality().hash(_service));
 
   /// Create a copy of ServerModel
   /// with the given fields replaced by the non-null parameter values.
@@ -280,6 +306,7 @@ abstract class _ServerModel implements ServerModel {
   const factory _ServerModel(
       {required final String name,
       required final String ip,
+      required final String os,
       required final String description,
       required final String status,
       required final String spec,
@@ -294,6 +321,8 @@ abstract class _ServerModel implements ServerModel {
   String get name;
   @override
   String get ip;
+  @override
+  String get os;
   @override
   String get description;
   @override

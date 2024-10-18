@@ -17,7 +17,7 @@ class SpeficPage extends StatelessWidget {
             name: server.name,
           ),
           const SizedBox(height: 70),
-          const ServerInfoCard()
+          ServerInfoCard(server: server)
         ],
       )),
     );
@@ -50,7 +50,8 @@ class TopBar extends StatelessWidget {
 }
 
 class ServerInfoCard extends StatelessWidget {
-  const ServerInfoCard({super.key});
+  final ServerModel server;
+  const ServerInfoCard({super.key, required this.server});
 
   @override
   Widget build(BuildContext context) {
@@ -59,39 +60,59 @@ class ServerInfoCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Text("JH-WEB-HOME-PROX01", style: AppTextStyle.headline1),
-            // Text(
-            //   "E5-2680v4 x 2 64GB DDR4 1x2TB SSD Hypervisor",
-            //   style: AppTextStyle.body2,
-            // ),
-            // const SizedBox(
-            //   height: 100,
-            // ),
-            // const ServiceCard()
-            Text("아직 준비중이에요 :)", style: AppTextStyle.headline1),
+            Text(server.name, style: AppTextStyle.headline1),
+            Text(
+              "${server.ip} | ${server.os} | ${server.created}",
+              style: AppTextStyle.caption1,
+            ),
+            const SizedBox(
+              height: 14,
+            ),
+            Text(
+              server.description,
+              style: AppTextStyle.body1,
+            ),
+            const SizedBox(
+              height: 100,
+            ),
+            ListView.builder(
+              padding: const EdgeInsets.only(bottom: 20),
+              shrinkWrap: true,
+              itemCount: server.service.length,
+              itemBuilder: (context, index) {
+                return ServiceCard(service: server.service[index]);
+              },
+            )
           ],
         ));
   }
 }
 
 class ServiceCard extends StatelessWidget {
+  final ServiceModel service;
   const ServiceCard({
     super.key,
+    required this.service,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: Colors.grey[800],
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Column(
-        children: [
-          Text("Promehteus", style: AppTextStyle.headline2),
-        ],
-      ),
-    );
+    return GestureDetector(
+        onTap: () {
+          // TODO: 웹페이지로 이동 구현하기
+        },
+        child: Container(
+          padding: const EdgeInsets.all(20),
+          margin: const EdgeInsets.only(bottom: 10),
+          decoration: BoxDecoration(
+            color: Colors.grey[800],
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Column(
+            children: [
+              Text(service.name, style: AppTextStyle.headline2),
+            ],
+          ),
+        ));
   }
 }

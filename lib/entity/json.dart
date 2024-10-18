@@ -8,6 +8,7 @@ class ServerModel with _$ServerModel {
   const factory ServerModel({
     required String name,
     required String ip,
+    required String os,
     required String description,
     required String status,
     required String spec,
