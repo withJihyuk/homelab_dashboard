@@ -28,7 +28,7 @@ class AppTextStyle {
       pretendardStyle(size, height)
           .copyWith(fontWeight: FontWeight.w300, color: Colors.grey);
 
-  static final TextStyle highlight = pretendardBoldStyle(32, 36);
+  static final TextStyle highlight = pretendardBoldStyle(36, 36);
   static final TextStyle headline1 = pretendardBoldStyle(24, 33);
   static final TextStyle headline2 = pretendardBoldStyle(20, 27);
   static final TextStyle headline3 = pretendardSemiBoldStyle(18, 24);
